@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     60377,       1231]
-NotebookOptionsPosition[     59675,       1206]
-NotebookOutlinePosition[     60017,       1221]
-CellTagsIndexPosition[     59974,       1218]
+NotebookDataLength[     85967,       1827]
+NotebookOptionsPosition[     83296,       1755]
+NotebookOutlinePosition[     83615,       1770]
+CellTagsIndexPosition[     83572,       1767]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -96,18 +96,19 @@ Cell[BoxData[{
      "}"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"StoR", "[", "t_", "]"}], ":=", 
-   RowBox[{"Simplify", "[", 
-    RowBox[{"Inverse", "[", 
-     RowBox[{"RtoS", "[", "t", "]"}], "]"}], "]"}]}], ";", " ", 
+   RowBox[{
+    RowBox[{"StoR", "[", "t_", "]"}], ":=", 
+    RowBox[{"Simplify", "[", 
+     RowBox[{"Inverse", "[", 
+      RowBox[{"RtoS", "[", "t", "]"}], "]"}], "]"}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{
    "change", " ", "of", " ", "basis", " ", "matrix", " ", "from", " ", 
     "Fixed", " ", "to", " ", "Rotating", " ", "reference", " ", "frame"}], 
-   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"RtoS", "[", "t", "]"}], "//", 
-   "MatrixForm"}]}], "\[IndentingNewLine]", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RtoS", "[", "t", "]"}], "//", 
+  "MatrixForm"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"RtoS", "'"}], "[", "t", "]"}], "//", 
@@ -120,20 +121,24 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"posRot", " ", "=", " ", 
     RowBox[{"{", 
-     RowBox[{"0", ",", "2", ",", "1"}], "}"}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "initial", " ", "position", " ", "in", " ", "rotating", " ", "refernce", 
-     " ", "frame"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"0", ",", "2", ",", "1"}], "}"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "initial", " ", "position", " ", "in", " ", "rotating", " ", "refernce", 
+    " ", "frame"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"vRot", " ", "=", " ", 
     RowBox[{"{", 
      RowBox[{
-      RowBox[{"-", "1000"}], ",", "2000", ",", "0"}], "}"}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "initial", " ", "velocity", " ", "in", " ", "rotating", " ", "reference", 
-     " ", "frame"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+      RowBox[{"-", "1000"}], ",", "2000", ",", "0"}], "}"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "initial", " ", "velocity", " ", "in", " ", "rotating", " ", "reference", 
+    " ", "frame"}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{
     RowBox[{"vAir", "[", 
      RowBox[{"{", 
@@ -141,56 +146,67 @@ Cell[BoxData[{
     RowBox[{"\[Omega]", 
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"-", "y"}], ",", "x", ",", "0"}], "}"}]}]}], ";", " ", 
-   RowBox[{"(*", 
+       RowBox[{"-", "y"}], ",", "x", ",", "0"}], "}"}]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "velocity", " ", "of", " ", "air", " ", "in", " ", "absolute", " ", 
+    "coordinates"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Cd", " ", "=", " ", "0.3"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"drag", " ", "coeficient"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Rho]", "=", "1.2"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"kg", "/", 
+     RowBox[{"m", "^", "3"}]}], ",", " ", 
+    RowBox[{"density", " ", "of", " ", "air"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"A", " ", "=", " ", "0.004"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"m", "^", "2"}], ",", " ", 
     RowBox[{
-    "velocity", " ", "of", " ", "air", " ", "in", " ", "absolute", " ", 
-     "coordinates"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"Cd", " ", "=", " ", "0.3"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"drag", " ", "coeficient"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"\[Rho]", "=", "1.2"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"kg", "/", 
-      RowBox[{"m", "^", "3"}]}], ",", " ", 
-     RowBox[{"density", " ", "of", " ", "air"}]}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"A", " ", "=", " ", "0.004"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"m", "^", "2"}], ",", " ", 
-     RowBox[{
-     "cross", " ", "sectional", " ", "area", " ", "of", " ", "ball"}]}], 
-    "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"m", " ", "=", " ", "0.145"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"kg", "*", " ", "mass", " ", "of", " ", "ball"}], "*)"}], 
-   "\[IndentingNewLine]", 
+    "cross", " ", "sectional", " ", "area", " ", "of", " ", "ball"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", " ", "=", " ", "0.145"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"kg", "*", " ", "mass", " ", "of", " ", "ball"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{
     RowBox[{"ballAirV", "[", 
      RowBox[{"p_", ",", "v_"}], "]"}], " ", ":=", " ", 
     RowBox[{
-     RowBox[{"vAir", "[", "p", "]"}], "-", "v"}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "airvelocity", " ", "of", " ", "ball", " ", "as", " ", "function", " ", 
-     "of", " ", "position", " ", "and", " ", "absolute", " ", "velocity"}], 
-    "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"vAir", "[", "p", "]"}], "-", "v"}]}], ";"}], " ", 
+  RowBox[{"(*", 
    RowBox[{
-    RowBox[{"dragForce", "[", 
-     RowBox[{"p_", ",", "v_"}], "]"}], ":=", 
-    RowBox[{".5", "*", "Cd", "*", "A", "*", "\[Rho]", "*", 
-     RowBox[{
-      RowBox[{"Norm", "[", 
-       RowBox[{"ballAirV", "[", 
-        RowBox[{"p", ",", "v"}], "]"}], "]"}], "^", "2"}], " ", "*", 
-     RowBox[{
+   "airvelocity", " ", "of", " ", "ball", " ", "as", " ", "function", " ", 
+    "of", " ", "position", " ", "and", " ", "absolute", " ", "velocity"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dragForce", "[", 
+    RowBox[{"p_", ",", "v_"}], "]"}], ":=", 
+   RowBox[{".5", "*", "Cd", "*", "A", "*", "\[Rho]", "*", 
+    RowBox[{
+     RowBox[{"Norm", "[", 
       RowBox[{"ballAirV", "[", 
-       RowBox[{"p", ",", "v"}], "]"}], "/", 
-      RowBox[{"Norm", "[", 
-       RowBox[{"ballAirV", "[", 
-        RowBox[{"p", ",", "v"}], "]"}], "]"}]}]}]}]}], "  ", 
+       RowBox[{"p", ",", "v"}], "]"}], "]"}], "^", "2"}], " ", "*", 
+    RowBox[{
+     RowBox[{"ballAirV", "[", 
+      RowBox[{"p", ",", "v"}], "]"}], "/", 
+     RowBox[{"Norm", "[", 
+      RowBox[{"ballAirV", "[", 
+       RowBox[{"p", ",", "v"}], "]"}], "]"}]}]}]}], "  ", 
   RowBox[{"(*", 
    RowBox[{
    "drag", " ", "force", " ", "on", " ", "ball", " ", "as", " ", "function", 
@@ -207,7 +223,8 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"RtoS", "[", "0", "]"}], ".", 
    RowBox[{"{", 
-    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{"s", "=", 
   RowBox[{"NDSolve", "[", "\[IndentingNewLine]", 
    RowBox[{
@@ -255,8 +272,8 @@ Cell[BoxData[{
            RowBox[{"x", "[", "t", "]"}], "[", 
            RowBox[{"[", 
             RowBox[{"{", 
-             RowBox[{"1", ",", "2"}], "}"}], "]"}], "]"}], "]"}], ">=", "r"}],
-         ",", 
+             RowBox[{"1", ",", "2"}], "}"}], "]"}], "]"}], "]"}], 
+         "\[GreaterEqual]", "r"}], ",", 
         RowBox[{
          RowBox[{"end", "=", "t"}], ";", "\"\<StopIntegration\>\""}]}], 
        "]"}]}], " ", 
@@ -512,7 +529,9 @@ Cell[BoxData[{
    3.6893585265908375`*^9}, {3.68935858146987*^9, 3.6893586076521506`*^9}, {
    3.689358667954132*^9, 3.689358721435999*^9}, {3.6894398742771606`*^9, 
    3.6894399138303494`*^9}, {3.6894399486886306`*^9, 
-   3.6894399800756125`*^9}, {3.689441675883582*^9, 3.689441678369401*^9}}],
+   3.6894399800756125`*^9}, {3.689441675883582*^9, 3.689441678369401*^9}, {
+   3.689614842327086*^9, 3.689614843793548*^9}, {3.689616580342167*^9, 
+   3.6896165833187113`*^9}}],
 
 Cell[BoxData["99.04544411531508`"], "Output",
  CellChangeTimes->{{3.6893523817066975`*^9, 3.689352415632246*^9}, 
@@ -853,8 +872,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{
                     GrayLevel[0.6], 
                     AbsolutePointSize[5], 
@@ -884,8 +904,9 @@ q+EpAkCJTaAId3sOQFyS/ndEhgNAQAPGdkIWD0BHWcLdahwFQLoJ6Umopg9A
 vd1CiejSBkCTjw8wnSEQQPiVkXD08QhAq0KpbbNqEEBsk2Azxi4LQCyTGthZ
 shBAYCBYjj+gDUAnaxVkFgARQMwfdA9ySBBAg+uOIqBIEUBj/5rHgMsRQNFn
 q5SZmRFAL++xNeOlE0Dwt3AR
-                    "]]}}}, AspectRatio -> 1, Axes -> False, Background -> 
-                  GrayLevel[0.93], Frame -> True, FrameStyle -> Directive[
+                    "]]}}}, AspectRatio -> 1, Axes -> 
+                  False, Background -> GrayLevel[0.93], Frame -> True, 
+                  FrameStyle -> Directive[
                     GrayLevel[0.7], 
                     Thickness[Tiny]], FrameTicks -> None, 
                   ImageSize -> {Automatic, 
@@ -930,8 +951,9 @@ q5SZmRFAL++xNeOlE0Dwt3AR
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{
                     GrayLevel[0.6], 
                     AbsolutePointSize[5], 
@@ -961,8 +983,9 @@ q+EpAkCJTaAId3sOQFyS/ndEhgNAQAPGdkIWD0BHWcLdahwFQLoJ6Umopg9A
 vd1CiejSBkCTjw8wnSEQQPiVkXD08QhAq0KpbbNqEEBsk2Azxi4LQCyTGthZ
 shBAYCBYjj+gDUAnaxVkFgARQMwfdA9ySBBAg+uOIqBIEUBj/5rHgMsRQNFn
 q5SZmRFAL++xNeOlE0Dwt3AR
-                    "]]}}}, AspectRatio -> 1, Axes -> False, Background -> 
-                  GrayLevel[0.93], Frame -> True, FrameStyle -> Directive[
+                    "]]}}}, AspectRatio -> 1, Axes -> 
+                  False, Background -> GrayLevel[0.93], Frame -> True, 
+                  FrameStyle -> Directive[
                     GrayLevel[0.7], 
                     Thickness[Tiny]], FrameTicks -> None, 
                   ImageSize -> {Automatic, 
@@ -1057,7 +1080,7 @@ Cell[BoxData[
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`tFinal$$], 0.0001, 55.89524761792369, 0.01}}, 
-    Typeset`size$$ = {902., {215., 222.}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {384., {83., 90.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`tFinal$7264$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -1075,7 +1098,8 @@ Cell[BoxData[
            Evaluate[
             ReplaceAll[
              $CellContext`x[$CellContext`t], $CellContext`s]], 1, {1, 
-           2}], {$CellContext`t, 0, $CellContext`tFinal$$}, Epilog -> {Black, 
+           2}], {$CellContext`t, 0, $CellContext`tFinal$$}, 
+          Epilog -> {Black, 
             Circle[{0, 0}, $CellContext`r]}, 
           PlotRange -> {{-$CellContext`r - 1, $CellContext`r + 
              1}, {-$CellContext`r - 1, $CellContext`r + 
@@ -1094,7 +1118,7 @@ Cell[BoxData[
             2 $CellContext`r + 1}}]}, 
       "Specifications" :> {{$CellContext`tFinal$$, 0.0001, 55.89524761792369, 
          0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{953., {275., 282.}},
+     ImageSizeCache->{431., {127., 134.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1141,7 +1165,7 @@ Cell[BoxData[
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`tFinal$$], 0.0001, 55.89524761792369, 0.01}}, 
-    Typeset`size$$ = {360., {206., 213.}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {360., {177., 183.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`tFinal$7289$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -1164,7 +1188,7 @@ Cell[BoxData[
           Circle[{0, $CellContext`r}, $CellContext`r]}, PlotRange -> All], 
       "Specifications" :> {{$CellContext`tFinal$$, 0.0001, 55.89524761792369, 
          0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{411., {253., 260.}},
+     ImageSizeCache->{407., {220., 227.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1201,12 +1225,537 @@ Cell[BoxData[
    3.689358610741099*^9}, 3.689358675082796*^9, {3.689358707600772*^9, 
    3.689358721798238*^9}, 3.689359609329499*^9, 3.6893597004258337`*^9, {
    3.68943991470321*^9, 3.689439924638702*^9}, {3.689439955688824*^9, 
-   3.689439980405507*^9}, 3.689441679624703*^9}]
+   3.689439980405507*^9}, 3.689441679624703*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1\\\"}], \\\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"r\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,1,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721223773*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,2,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721245796*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"2.0408163265306126`*^-9\\\", \\\"]\\\"}]\\) does not exist.\"",2,1,3,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721258882*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,4,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721298994*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"2.0428571428571433`*^-6\\\", \\\"]\\\"}]\\) does not exist.\"",2,1,5,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721305797*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,6,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721310999*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,1,7,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721317423*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"4.083673469387755`*^-6\\\", \\\"]\\\"}]\\) does not exist.\"",2,1,8,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.68961472132797*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,1,9,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896147213414307`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ParametricPlot","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1\\\"}], \\\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"r\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,10,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896147213562*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Show","gcomb",
+   "\"Could not combine the graphics objects in \
+\\!\\(\\*RowBox[{\\\"Show\\\", \\\"[\\\", RowBox[{GraphicsBox[List[], \
+List[Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[0, 0]], \
+RuleDelayed[DisplayFunction, Identity], Rule[Epilog, List[GrayLevel[0], \
+CircleBox[List[0, 0], r]]], Rule[FrameLabel, List[List[None, None], \
+List[None, None]]], Rule[FrameTicks, List[List[Automatic, Automatic], \
+List[Automatic, Automatic]]], Rule[GridLinesStyle, Directive[GrayLevel[0.5`, \
+0.4`]]], Rule[Method, List[Rule[\\\"ScalingFunctions\\\", None]]], \
+Rule[PlotRange, List[List[0.`, 0.`], List[0.`, 0.`]]], \
+Rule[PlotRangeClipping, True], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[Ticks, List[Automatic, Automatic]]]], \\\",\\\", \
+\\\"air\\\"}], \\\"]\\\"}]\\).\"",2,1,11,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721366921*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"r\\\"}]}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,12,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721411232*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ParametricPlot","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"r\\\"}]}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,13,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896147214296923`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1\\\"}], \\\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"r\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,14,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721458699*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,15,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.68961472147985*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"2.0408163265306126`*^-9\\\", \\\"]\\\"}]\\) does not exist.\"",2,1,16,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896147214941473`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,17,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721508108*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"2.0428571428571433`*^-6\\\", \\\"]\\\"}]\\) does not exist.\"",2,1,18,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721520255*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,19,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721534432*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,1,20,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721548983*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"4.083673469387755`*^-6\\\", \\\"]\\\"}]\\) does not exist.\"",2,1,21,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721562994*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,1,22,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721575357*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ParametricPlot","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1\\\"}], \\\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"r\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,23,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721589818*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Show","gcomb",
+   "\"Could not combine the graphics objects in \
+\\!\\(\\*RowBox[{\\\"Show\\\", \\\"[\\\", RowBox[{GraphicsBox[List[], \
+List[Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[0, 0]], \
+RuleDelayed[DisplayFunction, Identity], Rule[Epilog, List[GrayLevel[0], \
+CircleBox[List[0, 0], r]]], Rule[FrameLabel, List[List[None, None], \
+List[None, None]]], Rule[FrameTicks, List[List[Automatic, Automatic], \
+List[Automatic, Automatic]]], Rule[GridLinesStyle, Directive[GrayLevel[0.5`, \
+0.4`]]], Rule[Method, List[Rule[\\\"ScalingFunctions\\\", None]]], \
+Rule[PlotRange, List[List[0.`, 0.`], List[0.`, 0.`]]], \
+Rule[PlotRangeClipping, True], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[Ticks, List[Automatic, Automatic]]]], \\\",\\\", \
+\\\"air\\\"}], \\\"]\\\"}]\\).\"",2,1,24,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721600058*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"r\\\"}]}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,25,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721624119*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ParametricPlot","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"r\\\"}]}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   1,26,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896147216432323`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,27,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721668757*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,28,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.68961472168041*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,1,29,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.68961472169319*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,1,30,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689614721712846*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1\\\"}], \\\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"r\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   13,31,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450079859*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,13,32,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154500986137`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"2.0408163265306126`*^-9\\\", \\\"]\\\"}]\\) does not exist.\"",2,13,33,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154501122627`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,13,34,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154501259537`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"2.0428571428571433`*^-6\\\", \\\"]\\\"}]\\) does not exist.\"",2,13,35,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154501379433`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,13,36,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450149353*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,13,37,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450162609*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+\\\"2\\\"}], \\\"}\\\"}]\\) of \\!\\(\\*RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"4.083673469387755`*^-6\\\", \\\"]\\\"}]\\) does not exist.\"",2,13,38,
+   17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450175448*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,13,39,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450186275*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ParametricPlot","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1\\\"}], \\\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"r\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   13,40,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450200098*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Show","gcomb",
+   "\"Could not combine the graphics objects in \
+\\!\\(\\*RowBox[{\\\"Show\\\", \\\"[\\\", RowBox[{GraphicsBox[List[], \
+List[Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[0, 0]], \
+RuleDelayed[DisplayFunction, Identity], Rule[Epilog, List[GrayLevel[0], \
+CircleBox[List[0, 0], r]]], Rule[FrameLabel, List[List[None, None], \
+List[None, None]]], Rule[FrameTicks, List[List[Automatic, Automatic], \
+List[Automatic, Automatic]]], Rule[GridLinesStyle, Directive[GrayLevel[0.5`, \
+0.4`]]], Rule[Method, List[Rule[\\\"ScalingFunctions\\\", None]]], \
+Rule[PlotRange, List[List[0.`, 0.`], List[0.`, 0.`]]], \
+Rule[PlotRangeClipping, True], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[Ticks, List[Automatic, Automatic]]]], \\\",\\\", \
+\\\"air\\\"}], \\\"]\\\"}]\\).\"",2,13,41,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.68961545021036*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"r\\\"}]}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   13,42,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154502354307`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ParametricPlot","prng",
+   "\"Value of option PlotRange -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\
+\"-\\\", \\\"r\\\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", \\\"r\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\",\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"r\\\"}]}]}], \\\"}\\\"}]}], \\\"}\\\"}]\\) is not All, Full, Automatic, a \
+positive machine number, or an appropriate list of range specifications.\"",2,
+   13,43,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154502533283`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,13,44,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450279705*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,13,45,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154502919617`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"s\\\", \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,13,46,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6896154503043747`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,13,47,17801963484832549788,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.689615450316452*^9}]
 }, Open  ]]
 },
-WindowSize->{1916, 988},
-WindowMargins->{{Automatic, -5}, {Automatic, 0}},
-FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+WindowSize->{1918, 1059},
+WindowMargins->{{2, 0}, {0, 21}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1221,17 +1770,64 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 20897, 492, 924, "Input"],
-Cell[21480, 516, 2036, 27, 30, "Output"],
-Cell[23519, 545, 3230, 62, 77, "Output"],
-Cell[26752, 609, 3470, 67, 77, "Output"],
-Cell[30225, 678, 3007, 56, 77, "Output"],
-Cell[33235, 736, 2095, 29, 30, "Output"],
-Cell[35333, 767, 2095, 29, 30, "Output"],
-Cell[37431, 798, 2304, 33, 21, "Message"],
-Cell[39738, 833, 11427, 216, 72, "Output"],
-Cell[51168, 1051, 4522, 82, 574, "Output"],
-Cell[55693, 1135, 3966, 68, 530, "Output"]
+Cell[580, 22, 21171, 511, 972, "Input"],
+Cell[21754, 535, 2036, 27, 30, "Output"],
+Cell[23793, 564, 3230, 62, 69, "Output"],
+Cell[27026, 628, 3470, 67, 69, "Output"],
+Cell[30499, 697, 3007, 56, 69, "Output"],
+Cell[33509, 755, 2095, 29, 32, "Output"],
+Cell[35607, 786, 2095, 29, 32, "Output"],
+Cell[37705, 817, 2304, 33, 23, "Message"],
+Cell[40012, 852, 11511, 220, 65, "Output"],
+Cell[51526, 1074, 4531, 83, 278, "Output"],
+Cell[56060, 1159, 3966, 68, 464, "Output"],
+Cell[60029, 1229, 710, 12, 41, "Message"],
+Cell[60742, 1243, 342, 7, 23, "Message"],
+Cell[61087, 1252, 380, 8, 29, "Message"],
+Cell[61470, 1262, 342, 7, 23, "Message"],
+Cell[61815, 1271, 380, 8, 29, "Message"],
+Cell[62198, 1281, 342, 7, 23, "Message"],
+Cell[62543, 1290, 341, 7, 23, "Message"],
+Cell[62887, 1299, 378, 8, 29, "Message"],
+Cell[63268, 1309, 338, 7, 23, "Message"],
+Cell[63609, 1318, 716, 12, 41, "Message"],
+Cell[64328, 1332, 1074, 18, 93, "Message"],
+Cell[65405, 1352, 711, 12, 41, "Message"],
+Cell[66119, 1366, 720, 12, 41, "Message"],
+Cell[66842, 1380, 711, 12, 41, "Message"],
+Cell[67556, 1394, 342, 7, 23, "Message"],
+Cell[67901, 1403, 383, 8, 29, "Message"],
+Cell[68287, 1413, 343, 7, 23, "Message"],
+Cell[68633, 1422, 381, 8, 29, "Message"],
+Cell[69017, 1432, 343, 7, 23, "Message"],
+Cell[69363, 1441, 342, 7, 23, "Message"],
+Cell[69708, 1450, 380, 8, 29, "Message"],
+Cell[70091, 1460, 337, 7, 23, "Message"],
+Cell[70431, 1469, 718, 12, 41, "Message"],
+Cell[71152, 1483, 1074, 18, 93, "Message"],
+Cell[72229, 1503, 711, 12, 41, "Message"],
+Cell[72943, 1517, 720, 12, 41, "Message"],
+Cell[73666, 1531, 343, 7, 23, "Message"],
+Cell[74012, 1540, 342, 7, 23, "Message"],
+Cell[74357, 1549, 342, 7, 23, "Message"],
+Cell[74702, 1558, 342, 7, 23, "Message"],
+Cell[75047, 1567, 712, 12, 23, "Message"],
+Cell[75762, 1581, 346, 7, 23, "Message"],
+Cell[76111, 1590, 384, 8, 29, "Message"],
+Cell[76498, 1600, 346, 7, 23, "Message"],
+Cell[76847, 1609, 384, 8, 29, "Message"],
+Cell[77234, 1619, 344, 7, 23, "Message"],
+Cell[77581, 1628, 343, 7, 23, "Message"],
+Cell[77927, 1637, 381, 8, 29, "Message"],
+Cell[78311, 1647, 338, 7, 23, "Message"],
+Cell[78652, 1656, 719, 12, 23, "Message"],
+Cell[79374, 1670, 1074, 18, 93, "Message"],
+Cell[80451, 1690, 714, 12, 23, "Message"],
+Cell[81168, 1704, 721, 12, 23, "Message"],
+Cell[81892, 1718, 344, 7, 23, "Message"],
+Cell[82239, 1727, 346, 7, 23, "Message"],
+Cell[82588, 1736, 346, 7, 23, "Message"],
+Cell[82937, 1745, 343, 7, 23, "Message"]
 }, Open  ]]
 }
 ]
