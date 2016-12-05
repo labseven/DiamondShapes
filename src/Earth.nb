@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8641,        227]
-NotebookOptionsPosition[      8344,        211]
-NotebookOutlinePosition[      8670,        226]
-CellTagsIndexPosition[      8627,        223]
+NotebookDataLength[      8868,        244]
+NotebookOptionsPosition[      8563,        228]
+NotebookOutlinePosition[      8897,        243]
+CellTagsIndexPosition[      8854,        240]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,12 +23,14 @@ Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"Clear", "[", "p", "]"}], ";", "  ", 
-   RowBox[{"(*", 
-    RowBox[{"Position", " ", "of", " ", "the", " ", 
-     RowBox[{"ball", ".", "  ", "First"}], " ", "element", " ", "is", " ", 
-     "parallel", " ", "to", " ", "the", " ", 
-     RowBox[{"ground", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Clear", "[", "p", "]"}], ";"}], "  ", 
+  RowBox[{"(*", 
+   RowBox[{"Position", " ", "of", " ", "the", " ", 
+    RowBox[{"ball", ".", "  ", "First"}], " ", "element", " ", "is", " ", 
+    "parallel", " ", "to", " ", "the", " ", 
+    RowBox[{"ground", "."}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"pInit", " ", "=", " ", 
     RowBox[{"{", 
      RowBox[{"0.", ",", " ", "1."}], "}"}]}], ";"}], " ", 
@@ -39,36 +41,41 @@ Cell[BoxData[{
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"sInit", " ", "=", " ", "30."}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"30", " ", 
-     RowBox[{"m", "/", "s"}], " ", "baseball"}], "*)"}], 
-   "\[IndentingNewLine]", 
+   RowBox[{"sInit", " ", "=", " ", "30."}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"30", " ", 
+    RowBox[{"m", "/", "s"}], " ", "baseball"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"\[Theta]", " ", "=", " ", 
-    RowBox[{"45", " ", "Degree"}]}], ";", " ", 
-   RowBox[{"(*", 
+    RowBox[{"45", " ", "Degree"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
     RowBox[{
-     RowBox[{
-     "Angle", " ", "at", " ", "which", " ", "the", " ", "ball", " ", "is", 
-      " ", 
-      RowBox[{"hit", ".", "  ", "0"}]}], " ", "=", " ", 
-     RowBox[{"parallel", " ", "to", " ", 
-      RowBox[{"ground", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+    "Angle", " ", "at", " ", "which", " ", "the", " ", "ball", " ", "is", " ", 
+     RowBox[{"hit", ".", "  ", "0"}]}], " ", "=", " ", 
+    RowBox[{"parallel", " ", "to", " ", 
+     RowBox[{"ground", "."}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"vInit", " ", "=", " ", 
     RowBox[{"{", 
      RowBox[{
       RowBox[{"sInit", "*", 
        RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", " ", 
       RowBox[{"sInit", "*", 
-       RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"Initial", " ", "velocity", " ", "components"}], "*)"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"Airspeed", ".", "  ", "Set"}], " ", "to", " ", "zero", " ", 
-     "for", " ", 
-     RowBox[{"now", "."}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"Initial", " ", "velocity", " ", "components"}], "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Airspeed", ".", "  ", "Set"}], " ", "to", " ", "zero", " ", 
+    "for", " ", 
+    RowBox[{"now", "."}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"vAir", " ", "=", " ", 
     RowBox[{"{", 
      RowBox[{"0", ",", " ", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
@@ -85,32 +92,40 @@ Cell[BoxData[{
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"Cd", " ", "=", " ", "0.3"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"drag", " ", "coeficient"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"\[Rho]", "=", "1.2"}], ";", " ", 
-   RowBox[{"(*", 
+   RowBox[{"Cd", " ", "=", " ", "0.3"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"drag", " ", "coeficient"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Rho]", "=", "1.2"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"kg", "/", 
+     RowBox[{"m", "^", "3"}]}], ",", " ", 
+    RowBox[{"density", " ", "of", " ", "air"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"A", " ", "=", " ", "0.004"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"m", "^", "2"}], ",", " ", 
     RowBox[{
-     RowBox[{"kg", "/", 
-      RowBox[{"m", "^", "3"}]}], ",", " ", 
-     RowBox[{"density", " ", "of", " ", "air"}]}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"A", " ", "=", " ", "0.004"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"m", "^", "2"}], ",", " ", 
-     RowBox[{
-     "cross", " ", "sectional", " ", "area", " ", "of", " ", "ball"}]}], 
-    "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"m", " ", "=", " ", "0.145"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"kg", "*", " ", "mass", " ", "of", " ", "ball"}], "*)"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "drag", " ", "force", " ", "on", " ", "ball", " ", "as", " ", "function", 
-     " ", "of", " ", "position", " ", "and", " ", "absolute", " ", 
-     "velocity"}], "*)"}], "\[IndentingNewLine]", 
+    "cross", " ", "sectional", " ", "area", " ", "of", " ", "ball"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", " ", "=", " ", "0.145"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"kg", "*", " ", "mass", " ", "of", " ", "ball"}], "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "drag", " ", "force", " ", "on", " ", "ball", " ", "as", " ", "function", 
+    " ", "of", " ", "position", " ", "and", " ", "absolute", " ", 
+    "velocity"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{
     RowBox[{"DragForce", "[", "vBall_", "]"}], ":=", 
     RowBox[{".5", "*", "Cd", "*", "A", "*", "\[Rho]", " ", 
@@ -123,8 +138,10 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"RelVAir", "[", "vBall", "]"}], "/", 
       RowBox[{"Norm", "[", 
-       RowBox[{"RelVAir", "[", "vBall", "]"}], "]"}]}]}]}], ";", " ", 
-   RowBox[{"(*", "direction", "*)"}], " ", "\[IndentingNewLine]", 
+       RowBox[{"RelVAir", "[", "vBall", "]"}], "]"}]}]}]}], ";"}], " ", 
+  RowBox[{"(*", "direction", "*)"}], " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"GravForce", " ", "=", " ", 
     RowBox[{"{", 
      RowBox[{"0", ",", " ", 
@@ -200,7 +217,7 @@ Cell[BoxData[{
    3.689617646957995*^9, 3.6896176532653713`*^9}, {3.6896176937942877`*^9, 
    3.6896177524391317`*^9}, {3.68961782732332*^9, 3.689617899689025*^9}, {
    3.689617939083473*^9, 3.689617995501174*^9}, {3.6896180278742933`*^9, 
-   3.689618117152993*^9}}],
+   3.689618117152993*^9}, {3.689878322592688*^9, 3.689878363628971*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -211,7 +228,7 @@ Cell[BoxData[
 },
 WindowSize->{1918, 1059},
 WindowMargins->{{2, 0}, {0, Automatic}},
-FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -226,8 +243,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 7585, 180, 590, "Input"],
-Cell[8168, 204, 160, 4, 40, "Output"]
+Cell[580, 22, 7804, 197, 563, "Input"],
+Cell[8387, 221, 160, 4, 33, "Output"]
 }, Open  ]]
 }
 ]
